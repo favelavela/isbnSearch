@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  isbnSearch
+//  isbn
 //
-//  Created by Ernesto on 09/03/13.
-//  Copyright (c) 2013 Ernesto. All rights reserved.
+//  Created by moviles on 3/9/13.
+//  Copyright (c) 2013 moviles. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

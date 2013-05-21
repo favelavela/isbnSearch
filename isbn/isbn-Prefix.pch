@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'isbnSearch' target in the 'isbnSearch' project
+// Prefix header for all source files of the 'isbn' target in the 'isbn' project
 //
 
 #import <Availability.h>

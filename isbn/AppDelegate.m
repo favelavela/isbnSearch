@@ -1,12 +1,13 @@
 //
 //  AppDelegate.m
-//  isbnSearch
+//  isbn
 //
-//  Created by Ernesto on 09/03/13.
-//  Copyright (c) 2013 Ernesto. All rights reserved.
+//  Created by moviles on 3/9/13.
+//  Copyright (c) 2013 moviles. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "ControladoraViewController.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    ControladoraViewController *vc = [[ControladoraViewController alloc]initWithNibName:nil bundle:nil];
+    vc.moc = self.managedObjectContext;
+    self.window.rootViewController = vc;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -90,7 +95,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"isbnSearch" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"isbn" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -103,7 +108,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"isbnSearch.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"isbn.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
